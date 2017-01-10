@@ -52,7 +52,7 @@ preferences {
         	    image: "https://raw.githubusercontent.com/lawsonautomation/icons/master/info.png",
                 page: "Users Guide")
     	}
-		section("Version 1.1.2 - Copyright © 2016 Thomas Lawson. " +
+		section("Version 1.1.3 - Copyright © 2016, 2017 Thomas Lawson. " +
     			"If you like this app and would like to contribute to its development (and the development of similar apps), " +
         		"tap the link below to make a donation.") {
         	href(name: "LawsonAutomation",
@@ -69,7 +69,7 @@ preferences {
         	paragraph "Ceiling Fan Guru turns ceiling fans on when too warm, and off when comfortable or away. "
         }
         section("Ceiling Fans") {
-        	paragraph "These fans will turn on when the inside temperature exceeds the specified setpoint and the other condition described below are met."
+        	paragraph "These fans will turn on when the inside temperature exceeds the specified set point and the other condition described below are met."
         	paragraph "The speed and direction of a ceiling fan must be set on the fan itself as this app assumes a simple on/off switch"
         }
         section("Temperature Sensor") {
@@ -120,7 +120,7 @@ def initialize() {
     def currentState = myTempSensor.currentState("temperature")
     // give it a sensible default if we can not get the temperature
     state.insideTemp = (currentState) ? currentState.integerValue : ceilingFanSetpoint - 1
-	LOG "initial inside temp: ${state.insideTemp}, Setpoint: ${state.setpoint}"
+	LOG "initial inside temp: ${state.insideTemp}, Set point: ${state.setpoint}"
     
     // init inactivity delay
     state.delay = 30
